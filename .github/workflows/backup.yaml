@@ -1,4 +1,4 @@
-name: backup db
+name: backup
 on:
   schedule:
     - cron: "0 10 * * 1" # Every Monday at 10 AM UTC
