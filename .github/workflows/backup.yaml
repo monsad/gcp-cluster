@@ -1,0 +1,23 @@
+name: backup db
+on:
+  schedule:
+    - cron: "0 10 * * 1" # Every Monday at 10 AM UTC
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Backup MySQL DB
+      uses: valerianpereira/backup-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        type: db
+        db_type: mysql
+        db_user: ${{ secrets.MYSQL_USER }}
+        db_pass: ${{ secrets.MYSQL_PASS }}
+        db_port: 3306
+        db_name: world
