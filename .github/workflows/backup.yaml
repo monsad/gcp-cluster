@@ -14,10 +14,9 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        key: ${{ secrets.DEPLOY_KEY }}
         type: db
-        db_type: mysql
-        db_user: ${{ secrets.MYSQL_USER }}
-        db_pass: ${{ secrets.MYSQL_PASS }}
+        db_type: postgres
+        db_user: ${{ secrets.POST_USER }}
+        db_pass: ${{ secrets.POST_PASS }}
         db_port: 3306
-        db_name: world
+        db_name: database-gh
